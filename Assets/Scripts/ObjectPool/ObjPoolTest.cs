@@ -14,7 +14,7 @@ namespace ObjectPool
         public Transform theObjParent;
         private ObjectPool<GameObject> _myPool;
 
-        void Start()
+        private void Start()
         {
             _myPool = new ObjectPool<GameObject>(
                 () =>
@@ -34,7 +34,7 @@ namespace ObjectPool
                 },
                 (go) =>
                 {
-                    go.transform.SetParent(theObjParent);
+                    go.transform.SetParent(theObjParent); 
                     go.SetActive(false);
                 },
                 (go) => { Destroy(go); }
