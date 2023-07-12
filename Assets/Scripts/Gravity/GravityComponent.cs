@@ -12,6 +12,8 @@ namespace Gravity
         public float GravityFactorFactor = 1f;
         public float VelocityLimit = 6f;
         private Rigidbody _rigidbody;
+        [Header("Debug")] 
+        public bool IsGravityEnable=false;
 
         private void Awake()
         {
@@ -20,7 +22,8 @@ namespace Gravity
 
         private void FixedUpdate()
         {
-            UpdateVelocity();
+            if(IsGravityEnable)
+                UpdateVelocity();
         }
         private void UpdateVelocity()
         {
