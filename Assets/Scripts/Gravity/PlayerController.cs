@@ -9,7 +9,7 @@ namespace Gravity
     public class PlayerController : MonoBehaviour
     {
         [Header("Debug")] 
-        public Color AreaColor =Color.cyan;
+        public Color AreaColor =Color.cyan; 
 
         public BoxCollider TheBoxCollider;
         
@@ -37,7 +37,7 @@ namespace Gravity
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = AreaColor;
+            Gizmos.color = new Color(AreaColor.r,AreaColor.g, AreaColor.b, 0.5f);
             Gizmos.DrawCube(transform.position, TheBoxCollider.size);
         }
     }
